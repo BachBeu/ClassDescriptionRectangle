@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400px" height="200px" style="border: 1px solid black"></canvas>
+<script>
+    function Rectangle(a, b) {
+        this.a = a;
+        this.b = b;
+        this.getA = function () {
+            this.getA = a;
+        }
+        this.getB = function () {
+            this.getB = b;
+        }
+    }
+    function createRectangle() {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.rect(50, 50, a, b);
+        ctx.stroke();
+    }
+    function dientich() {
+        var s = a * b;
+        alert("diện tích hình chữ nhật là: " + s);
+    }
+    function chuvi() {
+        var p = (a + b)*2;
+        alert("chu vi hình chữ nhật là: " + p);
+    }
+    let hcn = new Rectangle(a,b);
+    let choose = parseInt(prompt("chọn 0: tính diện tích hình chữ nhật" + " | "
+        + "chọn 1: tính chu vi hình chữ nhật" + " | "
+        + "chọn 2: hiển thị hình chữ nhật trên màn hình web"));
+    var a = parseInt(prompt("Nhập vào một chiều rộng: "));
+    var b = parseInt(prompt("Nhập vào một chiều dài: "));
+    if(choose == 0){
+        dientich();
+    }else if(choose == 1){
+        chuvi();
+    }else if(choose == 2){
+        createRectangle();
+    }else{
+        alert("Nhập lại lựa chọn");
+    }
+</script>
+</body>
+</html>
